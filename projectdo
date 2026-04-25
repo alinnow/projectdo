@@ -132,7 +132,7 @@ go_up() {
 detect_nodejs_tool() {
   while :; do
     if [ -f package-lock.json ]; then
-      echo yarn
+      echo npm
       return
     elif [ -f bun.lock ] || [ -f bun.lockb ]; then
       echo bun

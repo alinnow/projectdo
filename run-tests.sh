@@ -140,6 +140,11 @@ if describe "npm / yarn / pnpm / bun"; then
     assert
     assertEqual "$RUN_RESULT" "npm test"
   fi
+  if it "uses npm if package-lock.json is present"; then
+    do_test_in "npm-lock"
+    assert
+    assertEqual "$RUN_RESULT" "npm test"
+  fi
   if it "uses yarn if yarn.lock is present"; then
     do_test_in "yarn"
     assert
